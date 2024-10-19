@@ -1,3 +1,7 @@
+# video folder
+video/
+cube/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
