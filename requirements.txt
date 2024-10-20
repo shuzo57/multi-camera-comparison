@@ -3,3 +3,5 @@ pandas
 scipy
 matplotlib
 opencv-python
+moviepy
+pydub

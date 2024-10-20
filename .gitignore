@@ -1,6 +1,12 @@
 # video folder
 video/
 cube/
+audio/
+mov/
+walk/
+data/
+img/
+output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
