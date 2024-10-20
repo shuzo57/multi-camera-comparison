@@ -1,4 +1,4 @@
-# video folder
+# my folder
 video/
 cube/
 audio/
@@ -7,6 +7,8 @@ walk/
 data/
 img/
 output/
+csv/
+trajectories/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
