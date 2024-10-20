@@ -2,6 +2,7 @@ numpy
 pandas
 scipy
 matplotlib
+seaborn
 opencv-python
 moviepy
 pydub

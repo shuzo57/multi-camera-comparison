@@ -9,6 +9,7 @@ img/
 output/
 csv/
 trajectories/
+fixed_trajectories/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
