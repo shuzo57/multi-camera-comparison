@@ -6,3 +6,6 @@ seaborn
 opencv-python
 moviepy
 pydub
+plotly
+pillow
+nbformat>=4.2.0
