@@ -12,6 +12,9 @@ trajectories/
 fixed_trajectories/
 fixed_trajectories_2/
 
+# my files
+*.html
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
