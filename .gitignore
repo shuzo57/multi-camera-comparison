@@ -10,6 +10,7 @@ output/
 csv/
 trajectories/
 fixed_trajectories/
+fixed_trajectories_2/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
