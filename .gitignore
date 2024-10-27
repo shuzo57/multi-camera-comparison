@@ -11,6 +11,7 @@ csv/
 trajectories/
 fixed_trajectories/
 fixed_trajectories_2/
+all_combinations/
 
 # my files
 *.html
