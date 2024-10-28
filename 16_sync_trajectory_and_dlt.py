@@ -55,5 +55,5 @@ for data_num in range(10):
         plt.savefig(os.path.join(output_dir, f"corr_{data_num}_{keypoint}.png"))
         plt.close()
     
-df_lag.to_csv("lag.csv")
+df_lag.to_csv("lag.csv", index=False)
 
