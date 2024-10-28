@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.linalg import orthogonal_procrustes
 
 
 def prepare_matrix(uv, xyz):
@@ -67,3 +68,15 @@ def sigmoid(x: np.ndarray, k: int = 50) -> np.ndarray:
     weights = 1 / (1 + np.exp(-k * (x - np.mean(x))))
     normalized_weights = weights / np.sum(weights)
     return normalized_weights
+
+def procrustes_analysis_fixed_scale(X, Y):
+    X_mean = X.mean(axis=0)
+    Y_mean = Y.mean(axis=0)
+    X_centered = X - X_mean
+    Y_centered = Y - Y_mean
+
+    R, scale = orthogonal_procrustes(Y_centered, X_centered)
+    scale = np.linalg.norm(X_centered) / np.linalg.norm(Y_centered.dot(R))
+    Y_transformed = Y_centered.dot(R) + X_mean
+    # Y_transformed = Y_centered.dot(R) * scale + X_mean
+    return Y_transformed

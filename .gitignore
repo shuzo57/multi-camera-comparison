@@ -12,6 +12,7 @@ trajectories/
 fixed_trajectories/
 fixed_trajectories_2/
 all_combinations/
+fig/
 
 # my files
 *.html

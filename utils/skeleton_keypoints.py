@@ -151,3 +151,33 @@ body_keypoints_connections = {
     "LEFT_LOWER_LEG": [13, 15],
     "RIGHT_LOWER_LEG": [14, 16],
 }
+
+compare_keypoints_list = [
+    "LEFT_SHOULDER",
+    "RIGHT_SHOULDER",
+    "LEFT_ELBOW",
+    "RIGHT_ELBOW",
+    "LEFT_WRIST",
+    "RIGHT_WRIST",
+    "LEFT_HIP",
+    "RIGHT_HIP",
+    "LEFT_KNEE",
+    "RIGHT_KNEE",
+    "LEFT_ANKLE",
+    "RIGHT_ANKLE"
+]
+
+compare_keypoints_connections = {
+    "SHOULDER": ["RIGHT_SHOULDER", "LEFT_SHOULDER"],
+    "RIGHT_UPPER_ARM": ["RIGHT_SHOULDER", "RIGHT_ELBOW"],
+    "LEFT_UPPER_ARM": ["LEFT_SHOULDER", "LEFT_ELBOW"],
+    "RIGHT_LOWER_ARM": ["RIGHT_ELBOW", "RIGHT_WRIST"],
+    "LEFT_LOWER_ARM": ["LEFT_ELBOW", "LEFT_WRIST"],
+    "RIGHT_TORSO": ["RIGHT_SHOULDER", "RIGHT_HIP"],
+    "LEFT_TORSO": ["LEFT_SHOULDER", "LEFT_HIP"],
+    "HIP": ["RIGHT_HIP", "LEFT_HIP"],
+    "RIGHT_UPPER_LEG": ["RIGHT_HIP", "RIGHT_KNEE"],
+    "LEFT_UPPER_LEG": ["LEFT_HIP", "LEFT_KNEE"],
+    "RIGHT_LOWER_LEG": ["RIGHT_KNEE", "RIGHT_ANKLE"],
+    "LEFT_LOWER_LEG": ["LEFT_KNEE", "LEFT_ANKLE"]
+}
