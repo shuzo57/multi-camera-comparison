@@ -80,3 +80,10 @@ def procrustes_analysis_fixed_scale(X, Y):
     Y_transformed = Y_centered.dot(R) + X_mean
     # Y_transformed = Y_centered.dot(R) * scale + X_mean
     return Y_transformed
+
+def calc_angle(a, b, c):
+    ba = a - b
+    bc = c - b
+    cosine_angle = np.dot(ba, bc) / (np.linalg.norm(ba) * np.linalg.norm(bc))
+    angle = np.arccos(cosine_angle)
+    return np.degrees(angle)

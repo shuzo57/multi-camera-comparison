@@ -181,3 +181,10 @@ compare_keypoints_connections = {
     "LEFT_LOWER_LEG": [8, 10],
     "RIGHT_LOWER_LEG": [9, 11],
 }
+
+angle_keypoints_dict = {
+    "RIGHT_ELBOW_ANGLE": ["RIGHT_SHOULDER", "RIGHT_ELBOW", "RIGHT_WRIST"],
+    "LEFT_ELBOW_ANGLE": ["LEFT_SHOULDER", "LEFT_ELBOW", "LEFT_WRIST"],
+    "RIGHT_KNEE_ANGLE": ["RIGHT_HIP", "RIGHT_KNEE", "RIGHT_ANKLE"],
+    "LEFT_KNEE_ANGLE": ["LEFT_HIP", "LEFT_KNEE", "LEFT_ANKLE"],
+}

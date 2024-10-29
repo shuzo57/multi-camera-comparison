@@ -15,6 +15,7 @@ fixed_trajectories_3/
 all_combinations/
 fig/
 transformed_keypoints/
+error/
 
 # my files
 *.html
