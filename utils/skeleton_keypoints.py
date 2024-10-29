@@ -168,16 +168,16 @@ compare_keypoints_list = [
 ]
 
 compare_keypoints_connections = {
-    "SHOULDER": ["RIGHT_SHOULDER", "LEFT_SHOULDER"],
-    "RIGHT_UPPER_ARM": ["RIGHT_SHOULDER", "RIGHT_ELBOW"],
-    "LEFT_UPPER_ARM": ["LEFT_SHOULDER", "LEFT_ELBOW"],
-    "RIGHT_LOWER_ARM": ["RIGHT_ELBOW", "RIGHT_WRIST"],
-    "LEFT_LOWER_ARM": ["LEFT_ELBOW", "LEFT_WRIST"],
-    "RIGHT_TORSO": ["RIGHT_SHOULDER", "RIGHT_HIP"],
-    "LEFT_TORSO": ["LEFT_SHOULDER", "LEFT_HIP"],
-    "HIP": ["RIGHT_HIP", "LEFT_HIP"],
-    "RIGHT_UPPER_LEG": ["RIGHT_HIP", "RIGHT_KNEE"],
-    "LEFT_UPPER_LEG": ["LEFT_HIP", "LEFT_KNEE"],
-    "RIGHT_LOWER_LEG": ["RIGHT_KNEE", "RIGHT_ANKLE"],
-    "LEFT_LOWER_LEG": ["LEFT_KNEE", "LEFT_ANKLE"]
+    "SHOULDER": [0, 1],
+    "LEFT_UPPER_ARM": [0, 2],
+    "RIGHT_UPPER_ARM": [1, 3],
+    "LEFT_FORE_ARM": [2, 4],
+    "RIGHT_FORE_ARM": [3, 5],
+    "LEFT_TORSO": [0, 6],
+    "RIGHT_TORSO": [1, 7],
+    "HIP": [6, 7],
+    "LEFT_THIGH": [6, 8],
+    "RIGHT_THIGH": [7, 9],
+    "LEFT_LOWER_LEG": [8, 10],
+    "RIGHT_LOWER_LEG": [9, 11],
 }
