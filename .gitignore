@@ -16,6 +16,7 @@ all_combinations/
 fig/
 transformed_keypoints/
 error/
+gif/
 
 # my files
 *.html

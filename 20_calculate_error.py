@@ -49,6 +49,10 @@ os.makedirs(output_dir, exist_ok=True)
 for data_num in range(10):
     true_path = f"transformed_keypoints/hirasaki_{data_num}_true.csv"
     df_true = pd.read_csv(true_path, index_col=0)
+    
+    for axis in ["x", "y", "z"]:
+        for key, value in dict(CENTER_SHOULDER=["RIGHT_SHOULDER", "LEFT_SHOULDER"], CENTER_HIP=["RIGHT_HIP", "LEFT_HIP"]).items():
+            df_true[f"{key}_{axis}"] = (df_true[f"{value[0]}_{axis}"] + df_true[f"{value[1]}_{axis}"]) / 2
 
     error_dict = {}
 
@@ -57,6 +61,10 @@ for data_num in range(10):
             print(f"Calculating error for {data_num} with indices {combo_indices}")
             pred_path = f"transformed_keypoints/hirasaki_{data_num}_{''.join([str(i) for i in combo_indices])}_transformed.csv"
             df_pred = pd.read_csv(pred_path, index_col=0)
+            
+            for axis in ["x", "y", "z"]:
+                for key, value in dict(CENTER_SHOULDER=["RIGHT_SHOULDER", "LEFT_SHOULDER"], CENTER_HIP=["RIGHT_HIP", "LEFT_HIP"]).items():
+                    df_pred[f"{key}_{axis}"] = (df_pred[f"{value[0]}_{axis}"] + df_pred[f"{value[1]}_{axis}"]) / 2
 
             mpjpe_errors = get_mpjpe_error(df_true, df_pred)
             error_dict[f"{''.join([str(i) for i in combo_indices])}_mpjpe"] = mpjpe_errors

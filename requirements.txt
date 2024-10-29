@@ -9,3 +9,4 @@ pydub
 plotly
 pillow
 nbformat>=4.2.0
+brokenaxes
