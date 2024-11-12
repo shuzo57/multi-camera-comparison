@@ -118,9 +118,30 @@ class AnnotationTool:
     def run(self):
         self.root.mainloop()
 
+def create_video(frame_dir: str, output_dir: str = "output") -> None:
+    video_name = os.path.basename(frame_dir)
+    if os.path.exists(f"{output_dir}/{video_name}.mp4"):
+        print(f"Video {output_dir}/{video_name}.mp4 already exists")
+        return
+    frame_index = 1
+    frame = cv2.imread(f"{frame_dir}/{video_name}_{frame_index}.jpg")
+    video = cv2.VideoWriter(f"{output_dir}/{video_name}.mp4", cv2.VideoWriter_fourcc(*'mp4v'), 30, (frame.shape[1], frame.shape[0]))
+    while True:
+        if os.path.exists(f"{frame_dir}/{video_name}_{frame_index}.jpg"):
+            print(f"\rFrame: {frame_index}", end="")
+            frame = cv2.imread(f"{frame_dir}/{video_name}_{frame_index}.jpg")
+            video.write(frame)
+            frame_index += 1
+        else:
+            break
+    print(f"\nVideo saved as {output_dir}/{video_name}.mp4")
+    video.release()
 
 if __name__ == "__main__":
-    video_path = "walk/hirasaki_0_0.mp4"
+    camera_num = 0
+    frame_dir = f"img/hirasaki_{camera_num}_0"
+    create_video(frame_dir)
+    video_path = f"output/hirasaki_{camera_num}_0.mp4"
     if video_path:
         app = AnnotationTool(video_path)
         app.run()
