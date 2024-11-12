@@ -17,6 +17,8 @@ fig/
 transformed_keypoints/
 error/
 gif/
+annotations/
+distance_error/
 
 # my files
 *.html
