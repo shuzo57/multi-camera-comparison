@@ -95,7 +95,7 @@ for n in range(5):
             plt.savefig(f'frames/frame_{idx}.png')
             plt.close(fig)
 
-        with imageio.get_writer(f'{output_dir}/animation_{data_num}_{comb}.gif', mode='I', duration=0.1) as writer:
+        with imageio.get_writer(f'{output_dir}/animation_{data_num}_{comb}.gif', mode='I', duration=0.1, loop=0) as writer:
             for idx in df_true.index[::2]:
                 filename = f'frames/frame_{idx}.png'
                 image = imageio.imread(filename)

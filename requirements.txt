@@ -11,3 +11,5 @@ pillow
 nbformat>=4.2.0
 brokenaxes
 pytk
+statsmodels
+scikit-posthocs

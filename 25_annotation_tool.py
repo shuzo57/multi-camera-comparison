@@ -63,6 +63,9 @@ class AnnotationTool:
 
     def move_left(self, event):
         self.frame_index = max(self.frame_index - 1, 0)
+        self.label_index = (self.label_index + 1) % len(compare_keypoints_list)
+        if compare_keypoints_list[self.label_index] not in self.click_points:
+            self.click_points[compare_keypoints_list[self.label_index]] = {}
         self.update_frame()
 
     def move_right(self, event):
@@ -73,14 +76,12 @@ class AnnotationTool:
         self.label_index = (self.label_index + 1) % len(compare_keypoints_list)
         if compare_keypoints_list[self.label_index] not in self.click_points:
             self.click_points[compare_keypoints_list[self.label_index]] = {}
-        self.frame_index = 1
         self.update_frame()
 
     def previous_label(self, event):
         self.label_index = (self.label_index - 1) % len(compare_keypoints_list)
         if compare_keypoints_list[self.label_index] not in self.click_points:
             self.click_points[compare_keypoints_list[self.label_index]] = {}
-        self.frame_index = 1
         self.update_frame()
 
     def record_click(self, event):
@@ -139,9 +140,9 @@ def create_video(frame_dir: str, output_dir: str = "output") -> None:
 
 if __name__ == "__main__":
     camera_num = 0
-    frame_dir = f"img/hirasaki_{camera_num}_0"
+    frame_dir = f"img/hirasaki_{camera_num}_1"
     create_video(frame_dir)
-    video_path = f"output/hirasaki_{camera_num}_0.mp4"
+    video_path = f"output/hirasaki_{camera_num}_1.mp4"
     if video_path:
         app = AnnotationTool(video_path)
         app.run()
