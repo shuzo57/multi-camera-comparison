@@ -61,10 +61,7 @@ class AnnotationTool:
             self.image_label.image = photo
 
     def move_left(self, event):
-        self.frame_index = max(self.frame_index - 1, 0)
-        self.label_index = (self.label_index + 1) % len(keypoints_list)
-        if keypoints_list[self.label_index] not in self.click_points:
-            self.click_points[keypoints_list[self.label_index]] = {}
+        self.frame_index = max(self.frame_index - 1, 1)
         self.update_frame()
 
     def move_right(self, event):
@@ -119,8 +116,8 @@ class AnnotationTool:
         self.root.mainloop()
 
 if __name__ == "__main__":
-    camera_num = 0
-    data_num = 0
+    camera_num = 2
+    data_num = 1
     video_path = f"walk/hirasaki_{camera_num}_{data_num}.mp4"
     if video_path:
         app = AnnotationTool(video_path)
