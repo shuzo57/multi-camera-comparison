@@ -45,7 +45,7 @@ for camera_num in [0, 2, 3, 4]:
         video = None
 
         for idx in df_2d_projected.index:
-            img_path = f"img/hirasaki_{camera_num}_{data_num}/hirasaki_{camera_num}_{data_num}_{idx+lag-1}.jpg"
+            img_path = f"img/hirasaki_{camera_num}_{data_num}/hirasaki_{camera_num}_{data_num}_{idx+lag}.jpg"
             if not os.path.exists(img_path):
                 continue
             img = cv2.imread(img_path)
