@@ -1,0 +1,16 @@
+// {
+//     "python.linting.flake8Enabled": true,
+//     "editor.codeActionsOnSave": {
+//         "source.organizeImports": "explicit"
+//     },
+//     "python.linting.mypyEnabled": true,
+//     "[python]": {
+//         "diffEditor.ignoreTrimWhitespace": false,
+//         "editor.wordBasedSuggestions": "off",
+//         "editor.defaultFormatter": "ms-python.black-formatter",
+//         "editor.formatOnSave": true
+//     },
+//     "black-formatter.args": [
+//         "--line-length=79"
+//     ]
+// }

@@ -24,7 +24,7 @@ output_dir = "fixed_trajectories_3"
 os.makedirs(output_dir, exist_ok=True)
 
 for data_num in range(10):
-    pred_path = f"all_combinations/hirasaki_{data_num}_0124.csv"
+    pred_path = f"all_combinations/hirasaki_{data_num}_01234.csv"
     true_path = f"fixed_trajectories_2/hirasaki_{data_num}_trajectories.csv"
 
     df_pred = pd.read_csv(pred_path, index_col=0)
@@ -59,9 +59,12 @@ for data_num in range(10):
     df_true2.to_csv(f"{output_dir}/hirasaki_{data_num}_trajectories.csv")
     
     for keypoint in keypoints:
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots(figsize=(6, 4))
         ax.plot(df_true2.index, df_true2[f"{keypoint}_z"], marker="o", label="true")
         ax.plot(df_pred.index, df_pred[f"{keypoint}_z"], marker="o", label="pred")
+        ax.set_xlabel("frame")
+        ax.set_ylabel("z [mm]")
         ax.legend()
+        plt.tight_layout()
         plt.savefig(f"{fig_dir}/hirasaki_{data_num}_trajectories_{keypoint}.png")
         plt.close()

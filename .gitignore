@@ -21,6 +21,9 @@ annotations/
 distance_error/
 28/
 analysis/
+GT_combinations/
+GT_transformed_keypoints/
+GT_error/
 
 # my files
 *.html

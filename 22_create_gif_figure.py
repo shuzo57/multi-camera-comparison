@@ -80,13 +80,19 @@ for n in range(5):
 
             ax.plot([], [], color='g', label='Ground Truth')
             ax.plot([], [], color='b', label='Predicted')
-            ax.set_xlabel('X [mm]', labelpad=6)
-            ax.set_ylabel('Y [mm]', labelpad=6)
-            ax.set_zlabel('Z [mm]', labelpad=6)
+            # ax.set_xlabel('X [mm]', labelpad=6)
+            # ax.set_ylabel('Y [mm]', labelpad=6)
+            # ax.set_zlabel('Z [mm]', labelpad=6)
             
-            ax.xaxis.set_major_locator(MaxNLocator(nbins=5))
-            ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
-            ax.zaxis.set_major_locator(MaxNLocator(nbins=10))
+            # ax.xaxis.set_major_locator(MaxNLocator(nbins=5))
+            # ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
+            # ax.zaxis.set_major_locator(MaxNLocator(nbins=10))
+            
+            # 目盛りの数値だけ消す
+            ax.set_xticklabels([])
+            ax.set_yticklabels([])
+            ax.set_zticklabels([])
+            
             ax.set_aspect('equal')
             ax.legend(loc='upper right', fontsize=10)
             ax.set_title(f"{data_num}-{comb}", fontsize=12)

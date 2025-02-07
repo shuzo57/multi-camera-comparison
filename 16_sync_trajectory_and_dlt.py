@@ -49,7 +49,7 @@ for data_num in range(10):
         df_lag.loc[data_num, f"lag_{keypoint}"] = lag
         df_lag.loc[data_num, f"lag_time_{keypoint}"] = lag_time
 
-        fig, ax = plt.subplots(1, 1, figsize=(7, 4))
+        fig, ax = plt.subplots(1, 1, figsize=(6, 4))
         ax.plot(df_true["time"] - lag_time, y_true, label="True")
         ax.plot(df_pred["time"], y_pred, label="Pred")
         plt.savefig(os.path.join(output_dir, f"corr_{data_num}_{keypoint}.png"))

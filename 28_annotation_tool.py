@@ -116,7 +116,7 @@ class AnnotationTool:
         self.root.mainloop()
 
 if __name__ == "__main__":
-    camera_num = 2
+    camera_num = 1
     data_num = 1
     video_path = f"walk/hirasaki_{camera_num}_{data_num}.mp4"
     if video_path:

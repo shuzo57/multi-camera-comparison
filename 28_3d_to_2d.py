@@ -15,7 +15,7 @@ keypoints_columns = [f"{keypoint}_{axis}" for keypoint in compare_keypoints_list
 
 df_sync = pd.read_csv("camera_sync.csv")
 
-for camera_num in [0, 2, 3, 4]:
+for camera_num in range(5):
     for data_num in range(10):
         print(f"camera_num: {camera_num}, data_num: {data_num}")
         lag = df_sync.filter(like="toe").iloc[data_num, camera_num] - df_sync.filter(like="toe").iloc[data_num].min()
